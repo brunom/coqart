@@ -8,12 +8,10 @@ Axiom
     forall r r':RatPlus, top r * bottom r' = top r' * bottom r -> r = r'.
 
 Goal False.
-cut (1 <> 0).
-cut (2 <> 0).
-intros H2 H1.
-discriminate (eq_RatPlus (mkRat 0 1 H1) (mkRat 0 2 H2)).
+ediscriminate (eq_RatPlus (mkRat 0 1 _) (mkRat 0 2 _)).
 simpl.
 trivial.
+Unshelve.
 discriminate.
 discriminate.
 Qed.
